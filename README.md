@@ -8,7 +8,7 @@ El proyecto está diseñado para realizar las siguientes tareas:
 
 1. **Conexión a la base de datos**: Conecta a una base de datos MySQL para almacenar las noticias generadas.
 2. **Consulta a la API de Trawlingweb**: Recupera noticias basadas en una consulta específica.
-3. **Generación de Noticias**: Utiliza el modelo GPT-3.5 de OpenAI para generar contenido original a partir de las noticias recuperadas.
+3. **Generación de Noticias**: Utiliza un modelo GPT de OpenAI para generar contenido original a partir de las noticias recuperadas.
 4. **Almacenamiento de Noticias**: Guarda las noticias generadas en la base de datos.
 
 **Tecnologías Usadas**
