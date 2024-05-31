@@ -1,3 +1,139 @@
+
+#ENG: Automatic News Generation with Trawlingweb and OpenAI
+
+This project aims to create original and novel news using data obtained from the Trawlingweb API and OpenAI's GPT LLM. The application automates the process of news collection, content generation, and storage in a database.
+
+## Project Description
+
+The project is designed to perform the following tasks:
+
+1. **Database Connection**: Connects to a MySQL database to store the generated news.
+2. **Querying the Trawlingweb API**: Retrieves news based on a specific query.
+3. **News Generation**: Uses an OpenAI GPT model to generate original content from the retrieved news.
+4. **News Storage**: Saves the generated news in the database.
+
+**Technologies Used**
+
+- **[Trawlingweb](https://www.trawlingweb.com)**: A system that captures and processes over 18 million pieces of information with real-time current content. It allows creating the desired content set through its API to prepare them for the prompt.
+
+- **[OpenAI](https://www.openai.com)**: Uses OpenAI's GPT-3.5 model, a powerful natural language processing tool that generates original and coherent content from the provided data. This model can interpret and synthesize information to create high-quality news articles.
+
+- **MySQL Database**: A relational database management system used to store the generated news. MySQL provides a robust and scalable solution to manage large volumes of data, ensuring data integrity and accessibility.
+
+**Requirements**
+
+To use this project, you need:
+
+1. An API key from [Trawlingweb](https://www.trawlingweb.com).
+2. An API key from [OpenAI](https://www.openai.com).
+
+## Code Structure
+
+### Configuration
+
+```javascript
+const DB_URL = 'jdbc:mysql://YOUR_DB_URL';
+const USER = 'YOUR_USER';
+const PASS = 'YOUR_PASSWORD*';
+const tableName = 'GenerAIve';
+const TW_API_URL = "https://api.trawlingweb.com";
+const token = "YOUR_TRAWLINGWEB_API_KEY";
+const q = 'site_language:es AND title:("Open AI" OR "openai" OR "chatgpt" OR "chat gpt" OR "dalle" OR "sam altman" OR "the AI" OR "la IA" OR "artificial intelligence" OR "inteligencia artificial" OR "google intelligence"~10 OR "google inteligencia"~10 OR "amazon intelligence"~10 OR "amazon inteligencia"~10 OR "microsoft intelligence"~10 OR "microsoft inteligencia"~10 OR grok)'; // Example to create a content collection about AI if we want to create content about AI
+```
+
+### Main Functions
+
+#### Database Connection
+
+```javascript
+function connectToDatabase() {
+  console.log('Establishing connection to the database...');
+  return Jdbc.getConnection(DB_URL, USER, PASS);
+}
+```
+
+#### Table Verification and Creation
+
+```javascript
+function ensureTableAndColumnsExist(conn, tableName) {
+  // Definition of required columns and their creation if they do not exist
+}
+```
+
+#### Fetching News from Trawlingweb
+
+```javascript
+function fetchNewsFromTrawlingweb(token, query) {
+  // Logic to query the Trawlingweb API and process the retrieved data
+}
+```
+
+#### Generating News with OpenAI
+
+```javascript
+function generateNews(newsData, author) {
+  // Using the OpenAI API to generate content from the retrieved news
+}
+```
+
+#### Storing Generated News
+
+```javascript
+function storeGeneratedNews(conn, news) {
+  // Inserting the generated news into the database
+}
+```
+
+### Main Flow
+
+```javascript
+function main() {
+  var db = connectToDatabase();
+  ensureTableAndColumnsExist(db, tableName);
+
+  try {
+    var newsData = fetchNewsFromTrawlingweb(token, q);
+    if (newsData.length > 0) {
+      console.log('newsData:', newsData);
+      var generatedNews = generateNews(newsData, "GenerAIve Author");
+      if (generatedNews) {
+        storeGeneratedNews(db, generatedNews);
+      }
+    } else {
+      console.log('Not enough news found to generate a new one.');
+    }
+  } catch (e) {
+    console.error("Error during execution:", e);
+  }
+
+  db.close();
+  console.log('Process completed and connection closed.');
+}
+```
+
+## Configuration
+
+1. **Database**: Make sure you have a MySQL database configured and accessible with the credentials provided in the script.
+2. **Trawlingweb API**: You will need a valid access token for the Trawlingweb API.
+3. **OpenAI API**: You must have a valid API key for OpenAI.
+
+## Execution
+
+To run the project, make sure you have all the necessary dependencies and execute the main `main` script. This will start the complete flow of collecting, generating, and storing news.
+
+## Notes
+
+- Ensure to handle database credentials and API keys securely.
+- The structure and format of the generated news can be adjusted according to specific needs.
+
+## License
+
+This project is licensed under the terms of the MIT License. See the `LICENSE` file for more details.
+
+***
+
+
+
 # ESP: Generación Automática de Noticias con Trawlingweb y OpenAI
 
 Este proyecto tiene como objetivo la creación de noticias originales y novedosas utilizando datos obtenidos de la API de Trawlingweb y LLM GPT de OpenAI. La aplicación automatiza el proceso de recopilación de noticias, generación de contenido y almacenamiento en una base de datos.
