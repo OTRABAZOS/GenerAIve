@@ -5,7 +5,10 @@ const PASS = 'TU_PASSWORD*';
 const tableName = 'GenerAIve';
 const TW_API_URL = "https://api.trawlingweb.com";
 const token = "TU_TRAWLING_TOKEN_APIKEY";
-const q = 'site_language:es AND title:("Open AI" OR "openai" OR "chatgpt" OR "chat gpt" OR "dalle" OR "sam altman" OR "the AI" OR "la IA" OR "artificial intelligence" OR "inteligencia artificial" OR "google intelligence"~10 OR "google inteligencia"~10 OR "amazon intelligence"~10 OR "amazon inteligencia"~10 OR "microsoft intelligence"~10 OR "microsoft inteligencia"~10 OR grok)'; // Ejemplo para crear colección de contenidos sobre IA en el supuesto en el que queremos crear un contenido sobre IA
+const q = 'site_language:es AND title:("Open AI" OR "openai" OR "chatgpt" OR "chat gpt" OR "dalle" OR "sam altman" OR "the AI" OR "la IA" OR "artificial intelligence" OR
+  "inteligencia artificial" OR "google intelligence"~10 OR "google inteligencia"~10 OR "amazon intelligence"~10 OR "amazon inteligencia"~10 OR "microsoft intelligence"~10 OR
+  "microsoft inteligencia"~10 OR grok)'; 
+  // Ejemplo para crear colección de contenidos sobre IA en el supuesto en el que queremos crear un contenido sobre IA
 
 function main() {
   var db = connectToDatabase();
