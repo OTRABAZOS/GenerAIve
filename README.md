@@ -1,6 +1,6 @@
 # Generación Automática de Noticias con Trawlingweb y OpenAI
 
-Este proyecto tiene como objetivo la creación de noticias originales y novedosas utilizando datos obtenidos de la API de Trawlingweb y el modelo de lenguaje GPT-3.5 de OpenAI. La aplicación automatiza el proceso de recopilación de noticias, generación de contenido y almacenamiento en una base de datos.
+Este proyecto tiene como objetivo la creación de noticias originales y novedosas utilizando datos obtenidos de la API de Trawlingweb y LLM GPT de OpenAI. La aplicación automatiza el proceso de recopilación de noticias, generación de contenido y almacenamiento en una base de datos.
 
 ## Descripción del Proyecto
 
