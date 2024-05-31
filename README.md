@@ -1,6 +1,4 @@
-
-#ENG: Automatic News Generation with Trawlingweb and OpenAI
-
+# ENG: Automatic News Generation with Trawlingweb and OpenAI
 This project aims to create original and novel news using data obtained from the Trawlingweb API and OpenAI's GPT LLM. The application automates the process of news collection, content generation, and storage in a database.
 
 ## Project Description
